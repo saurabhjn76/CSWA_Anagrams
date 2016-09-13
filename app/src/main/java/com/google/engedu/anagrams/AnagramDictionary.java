@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class AnagramDictionary {
 
-    private static final int MIN_NUM_ANAGRAMS = 3;
+    private static final int MIN_NUM_ANAGRAMS = 5;
     private static final int DEFAULT_WORD_LENGTH = 3;
     private static final int MAX_WORD_LENGTH = 7;
     int wordLength=DEFAULT_WORD_LENGTH;
@@ -95,7 +95,7 @@ public class AnagramDictionary {
         Log.e("index",sizeToWords.get(wordLength).size() + "  dfd  "+ index);
         Log.e("indexd:" , sizeToWords.get(wordLength).get(index)+"");
         while(flag) {
-            if (lettersToWord.get(sortLetters(sizeToWords.get(wordLength).get(index))).size() >= MIN_NUM_ANAGRAMS) {
+            if (lettersToWord.get(sortLetters(sizeToWords.get(wordLength).get(index))).size() + getAnagramsWithOneMoreLetter(sizeToWords.get(wordLength).get(index)).size() >= MIN_NUM_ANAGRAMS) {
                 flag = false;
                 if(wordLength < MAX_WORD_LENGTH) {
                     wordLength++;
