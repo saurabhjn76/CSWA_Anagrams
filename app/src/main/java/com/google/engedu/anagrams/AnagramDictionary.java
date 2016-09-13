@@ -77,7 +77,15 @@ public class AnagramDictionary {
     }
 
     public String pickGoodStarterWord() {
-        random.nextInt()
-        return "stop";
+        boolean flag= true;
+        int index = random.nextInt(wordList.size());
+        while(flag) {
+            if (lettersToWord.get(sortLetters(wordList.get(index))).size() >= MIN_NUM_ANAGRAMS) {
+                flag = false;
+                return wordList.get(index);
+            }
+            index=(index+1)%wordList.size();
+        }
+        return  "";
     }
 }
