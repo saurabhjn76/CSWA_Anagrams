@@ -95,7 +95,7 @@ public class AnagramDictionary {
         Log.e("index",sizeToWords.get(wordLength).size() + "  dfd  "+ index);
         Log.e("indexd:" , sizeToWords.get(wordLength).get(index)+"");
         while(flag) {
-            if (lettersToWord.get(sortLetters(sizeToWords.get(wordLength).get(index))).size() + getAnagramsWithOneMoreLetter(sizeToWords.get(wordLength).get(index)).size() >= MIN_NUM_ANAGRAMS) {
+            if ( getAnagramsWithOneMoreLetter(sizeToWords.get(wordLength).get(index)).size() >= MIN_NUM_ANAGRAMS) {
                 flag = false;
                 if(wordLength < MAX_WORD_LENGTH) {
                     wordLength++;
